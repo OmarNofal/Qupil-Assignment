@@ -1,0 +1,4 @@
+You will be given a text containing information about available time slots of a tutor in natural language.
+Your task it to create a json containing all days of the week as key and each day contains an array of slots where each slot contains (from, to) keys
+Only write time as numbers. Only return valid json, in all lower case, no more and no less.
+If a day is not mentioned either explicilty or implicitly return empty slots array. If the query is not valid just return null
