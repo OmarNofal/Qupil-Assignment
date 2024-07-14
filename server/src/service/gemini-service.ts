@@ -15,7 +15,7 @@ const model = genAI.getGenerativeModel({
 
 export async function inferSlotsFromText(text: string) {
     const result = await model.generateContent({
-        generationConfig: { temperature: 0.2 },
+        generationConfig: { temperature: 0.4 },
         contents: [{ role: 'user', parts: [{ text }] }],
     })
 
@@ -25,7 +25,7 @@ export async function inferSlotsFromText(text: string) {
     const response = result.response
 
     const responseText = response.text()
-    if (responseText == 'null') {
+    if (responseText.trim() === 'null') {
         // model didn't understand the query
         // user should retry with a different query
         throw new Error('Bad Query')

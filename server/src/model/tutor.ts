@@ -6,13 +6,14 @@ export const TutorSchema = new mongoose.Schema({
     country: String,
     timezone: String,
     slots: {
-        type: [
+        type: Map,
+        of: [
             {
                 from: Number,
                 to: Number,
             },
         ],
-        default: [],
+        default: null,
         required: false,
     },
 })

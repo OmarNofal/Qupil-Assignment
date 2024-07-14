@@ -1,4 +1,9 @@
-You will be given a text containing information about available time slots of a tutor in natural language.
-Your task it to create a json containing all days of the week as key and each day contains an array of slots where each slot contains (from, to) keys
-Only write time as numbers. Only return valid json, in all lower case, no more and no less.
-If a day is not mentioned either explicilty or implicitly return empty slots array. If the query is not valid just return null
+You will receive a query containing some text describing a tutor's available time slots. Your task is to create a JSON object with the days of the week as keys. Each key should map to an array of slots, where each slot is an object containing "from" and "to" keys with time values in numbers.
+
+Requirements:
+
+Only write times as numbers in 24-hour format
+Return only valid JSON in lowercase
+If a day is not mentioned, either explicitly or implicitly, return an empty slots array for that day
+If the input text is not valid, return null
+Sort the slots in a day in ascending order by from key
